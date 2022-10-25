@@ -157,5 +157,11 @@ namespace E_library.Controllers
         {
           return _context.Book.Any(e => e.CallingNo == id);
         }
+
+        // GET: Books
+        public async Task<IActionResult> Identify()
+        {
+            return View(await _context.Book.ToListAsync());
+        }
     }
 }
