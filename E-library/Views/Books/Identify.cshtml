@@ -1,0 +1,110 @@
+﻿@model IEnumerable<E_library.Models.Book>
+
+@{
+    ViewData["Title"] = "Identify";
+    int alt = 0;
+    Random random = new Random();
+    Dictionary<string, int> BookList = new Dictionary<string, int>();
+}
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            color: white;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #EFC3D8;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 style="color:white" class="text-center h1">Identifying Areas</h1>
+        <h2 style="color:white" class="text-center h1">Match The Columns</h2>
+    </div>
+    <br />
+    <br />
+    <div>
+        <button class="button">
+            <a class="nav-link text-white" asp-area="" asp-controller="Books" asp-action="Index">Finish</a>
+        </button>
+    </div>
+    <table>
+        @if(alt%2==0){
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Describtion)
+                    </th>
+                    <th></th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CallingNo)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model){
+                    <tr>
+                        <td></td>
+                        @BookList.Add(item.Key, item.Value)
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Describtion)
+                        </td>
+                        <td></td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CallingNo)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            
+        }else{
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CallingNo)
+                    </th>
+                    <th></th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Describtion)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model){
+                <tr>
+                    <td></td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CallingNo)
+                    </td>
+                    <td></td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Describtion)
+                    </td>
+                </tr>
+                }
+            </tbody>
+        }
+        
+    </table>
+    <br />
+    <br />
+    <div>
+        <br />
+        <br />
+        <a class="text-white btn btn-primary" @alt=(@alt+1)>Next</a>
+    </div>
+</body>
