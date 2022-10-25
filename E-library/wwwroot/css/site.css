@@ -15,4 +15,70 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #24262B;
+}
+#Video {
+    width: 1366px;
+    height: 767px;
+}
+#Tabs {
+    position: absolute;
+    width: 366.04px;
+    height: 42px;
+    left: 347.999px;
+    top: 3px;
+    overflow: visible;
+}
+
+#Footer {
+    position: absolute;
+    width: 1366px;
+    height: 504px;
+    left: 0px;
+    top: 1671px;
+    overflow: visible;
+}
+
+.wrap-element {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+.wrapped-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.box {
+    display: inline-block;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    /* for horizontal aligning of child divs */
+    justify-content: center;
+    /* for vertical aligning */
+    align-items: center;
+    justify-content: space-evenly;
+}
+.box-inner {
+    position: relative;
+    float: left
+}
+.box-inner-title{
+    margin:20px;
+    color:white;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 40px;
 }
